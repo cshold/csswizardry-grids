@@ -24,7 +24,19 @@ $use-silent-classes: false;
 $push:               true;
 $pull:               false;
 
-/* Force clearfix on grids */
+/* Clearfix on grids */
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both; }
+  *zoom: 1;
+}
+
+@mixin clearfix() {
+  @extend .clearfix;
+}
+
 .grid,
 .grid-uniform {
   @include clearfix;

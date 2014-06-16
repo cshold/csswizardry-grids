@@ -1,5 +1,14 @@
 # csswizardry-grids
 
+## Fork of CSS Wizardry Grids
+
+This is a variation on the original. Changes include:
+* Using floats instead of inline-block
+* Helper classes per breakpoint
+  - E.g. small--show, large--text-right, medium--left
+* Clearfix helpers
+  - Use `.grid-uniform` when all children will be equal widths to make elements clear properly.
+
 **Simple, fluid, nestable, flexible, Sass-based, responsive grid system.**
 
 * Fully responsive
@@ -90,15 +99,15 @@ If you are using traditional classes then an example, basic usage might look
 like this:
 
     <div class="grid">
-    
+
         <div class="grid__item  lap--one-half  desk--two-thirds">
             ...
         </div><!--
-    
+
      --><div class="grid__item  lap--one-half  desk--one-third">
             ...
         </div>
-    
+
     </div>
 
 It’s as simple as that!
@@ -127,15 +136,15 @@ If you are using silent classes (`$use-silent-classes: true;`) then your HTML
 might look like this:
 
     <div class="page">
-    
+
         <div class="content">
             ...
         </div><!--
-    
+
      --><div class="sub-content">
             ...
         </div>
-    
+
     </div>
 
 …and your Sass, something like this:
@@ -143,18 +152,18 @@ might look like this:
     .page{
         @extend %grid;
     }
-    
+
         .content,
         .sub-content{
             @extend %grid__item;
             @extend %one-whole;
             @extend %lap--one-half;
         }
-    
+
         .content{
             @extend %desk--two-thirds;
         }
-    
+
         .sub-content{
             @extend %desk--one-third;
         }
